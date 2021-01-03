@@ -5,3 +5,6 @@ https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ
 3d물체 기본
 리지드바디 (or static body 등)을 만들고 자식으로 CollisionShape와 MeshInstance를 넣어준다.
 
+2강
+플레이어 생성. 스크립팅.
+키네마틱 바디 사용.
