@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Steve.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scripts/Steve.cs" type="Script" id=2]
+[ext_resource path="res://new_env.tres" type="Environment" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -29,9 +30,6 @@ shape = SubResource( 1 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.805711, 0.592309, 0, -0.592309, 0.805711, -0.0233974, 7.50528, 11.7426 )
-
 [node name="Floor" type="StaticBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
@@ -44,3 +42,22 @@ material/0 = null
 [node name="Steve" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 script = ExtResource( 2 )
+
+[node name="CameraTarget" type="Spatial" parent="Steve"]
+transform = Transform( 1, 0, 0, 0, 0.872709, 0.488241, 0, -0.488241, 0.872709, 0, 4.01788, 9.58303 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.742584, 0.669753, 0, -0.669753, 0.742584, 0, 8.93319, 20.7076 )
+environment = ExtResource( 3 )
+target = NodePath("../Steve/CameraTarget")
+speed = 5.0
+enabled = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.442774, -0.507652, 0.739081, 0, 0.824284, 0.566176, -0.896633, 0.250688, -0.364972, 0, 11.1, 0 )
+light_color = Color( 0.972549, 1, 0.635294, 1 )
+light_energy = 1.5
+shadow_enabled = true
+directional_shadow_split_1 = 0.035
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 40.0

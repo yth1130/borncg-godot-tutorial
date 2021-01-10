@@ -14,3 +14,11 @@ https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ
 SpatialMaterial : Unity의 Standard Material같은 느낌.
 회전 : RotateX(radian) 등 사용.
 입력키 : 프로젝트 - 프로젝트 설정 - 입력 맵 에서 설정.
+
+4.
+Viewport : 프로젝트 - 프로젝트 설정 - 일반 - Display - Window - Size
+Smooth Camera Follow : InterpolatedCamera 노드 사용.
+Light : 노드로 만듦.
+Shadow : Light인스펙터에서 설정.
+3D Environment : 카메라 노드 인스펙터에서 설정. Background에서 모드(스카이나 컬러 등)설정, Ambient 설정.
+ 프로젝트 - 프로젝트 설정 - 일반 - Rendering - Environment에서 기본 Environment씬 설정 가능.
