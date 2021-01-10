@@ -8,3 +8,9 @@ https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ
 2강
 플레이어 생성. 스크립팅.
 키네마틱 바디 사용.
+
+3강
+자식노드 가져오기 : GetNode<T>("path")
+SpatialMaterial : Unity의 Standard Material같은 느낌.
+회전 : RotateX(radian) 등 사용.
+입력키 : 프로젝트 - 프로젝트 설정 - 입력 맵 에서 설정.

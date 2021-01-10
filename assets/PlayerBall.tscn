@@ -4,11 +4,11 @@
 
 [sub_resource type="BoxShape" id=1]
 
-[node name="Steve" type="KinematicBody"]
+[node name="playerball" type="KinematicBody"]
+
+[node name="Sphere" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = ExtResource( 1 )
-material/0 = null
