@@ -22,3 +22,12 @@ Light : 노드로 만듦.
 Shadow : Light인스펙터에서 설정.
 3D Environment : 카메라 노드 인스펙터에서 설정. Background에서 모드(스카이나 컬러 등)설정, Ambient 설정.
  프로젝트 - 프로젝트 설정 - 일반 - Rendering - Environment에서 기본 Environment씬 설정 가능.
+
+5.
+Texture : https://www.cc0textures.com/ 여기서 다운받음.
+ Floor MeshInstance의 Material에서 Normal Map 설정. Uv1의 Triplaner true로, Uv1의 Scale을 조정.
+Mesh Library : 한 씬에 MeshInstance를 여러개 갖게 한다(?). 각 MeshInstance의 Mesh와 Material에서 '유일하게 만들기' 클릭 -> '유일하게 만들기' 하지 않는게 좋겠다. 씬의 크기가 너무 커짐.
+ 루트 밑에 MeshInstance들이 있게끔 씬을 구성한 뒤 씬 저장. 씬 - 다음으로 변환 - 메시 라이브러리 로 만들 수 있다.
+ GridMap Node를 추가하고 인스펙터에서 Mesh Library 할당.
+GridMap : 메시를 페인트하는것처럼 그려서 배치할 수 있다.
+Screen Space Ambient Occlusion : Environment의 인스펙터에서 ssao 활성화.
