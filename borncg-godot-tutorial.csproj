@@ -57,6 +57,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="assets\scripts\PlayButton.cs" />
     <Compile Include="assets\scripts\Steve.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -31,3 +31,9 @@ Mesh Library : 한 씬에 MeshInstance를 여러개 갖게 한다(?). 각 MeshIn
  GridMap Node를 추가하고 인스펙터에서 Mesh Library 할당.
 GridMap : 메시를 페인트하는것처럼 그려서 배치할 수 있다.
 Screen Space Ambient Occlusion : Environment의 인스펙터에서 ssao 활성화.
+
+6.
+UI만들기
+새 씬에서 사용자 인터페이스를 누르면 Control노드가 나옴.
+label을 넣고 폰트 설정. Dynamic Font로 하고 그걸 열면 또 폰트 설정 가능. font data에 .ttf or .otf 파일을 넣어준다.
+배경색은 ColorRect노드 사용.
