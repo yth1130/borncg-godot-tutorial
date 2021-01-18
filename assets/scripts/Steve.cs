@@ -13,12 +13,16 @@ public class Steve : KinematicBody
     string name = "player";
     Vector3 velocity;
 
-    const float rotateSpeed = 5f;
+    const float speed = 12f;
+    const float rotateSpeed = 9f;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GD.Print(name);
+        
+        GetNode<Area>("../Enemy1").Connect("body_entered", this, nameof(OnEnemyEntered));
+
     }
     public override void _PhysicsProcess(float delta)
     {
@@ -29,12 +33,12 @@ public class Steve : KinematicBody
         {
             // Rotate(Vector3.Up, 5);
             GetNode<MeshInstance>("MeshInstance").RotateZ(Mathf.Deg2Rad(-rotateSpeed));
-            velocity.x = 5f;
+            velocity.x = +speed;
         }
         else if (Input.IsActionPressed("ui_left"))
         {
             GetNode<MeshInstance>("MeshInstance").RotateZ(Mathf.Deg2Rad(+rotateSpeed));
-            velocity.x = -5f;
+            velocity.x = -speed;
         }
         else
             velocity.x = Mathf.Lerp(velocity.x, 0f, 0.1f);
@@ -44,12 +48,12 @@ public class Steve : KinematicBody
         else if (Input.IsActionPressed("ui_up"))
         {
             GetNode<MeshInstance>("MeshInstance").RotateX(Mathf.Deg2Rad(-rotateSpeed));
-            velocity.z = -5f;
+            velocity.z = -speed;
         }
         else if (Input.IsActionPressed("ui_down"))
         {
             GetNode<MeshInstance>("MeshInstance").RotateX(Mathf.Deg2Rad(+rotateSpeed));
-            velocity.z = +5f;
+            velocity.z = +speed;
         }
         else
             velocity.z = Mathf.Lerp(velocity.z, 0f, 0.1f);
@@ -61,4 +65,13 @@ public class Steve : KinematicBody
 //  {
 //      
 //  }
+
+    void OnEnemyEntered(Node enemy)
+    {
+        if (enemy.Name != "Steve")
+            return;
+
+        // GD.Print(enemy.Name);
+        GetTree().ChangeScene("res://assets/Menu.tscn");
+    }
 }
