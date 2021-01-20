@@ -37,3 +37,6 @@ UI만들기
 새 씬에서 사용자 인터페이스를 누르면 Control노드가 나옴.
 label을 넣고 폰트 설정. Dynamic Font로 하고 그걸 열면 또 폰트 설정 가능. font data에 .ttf or .otf 파일을 넣어준다.
 배경색은 ColorRect노드 사용.
+
+7.
+https://youtu.be/rS-PcTTiGtA?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ&t=1972
