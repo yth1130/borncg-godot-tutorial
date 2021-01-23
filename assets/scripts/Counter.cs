@@ -12,7 +12,8 @@ public class Counter : Label
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        GetNode<Timer>("Timer").Connect("timeout", this, nameof(OnTimeOut));
+        Text = coins.ToString();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,4 +21,19 @@ public class Counter : Label
 //  {
 //      
 //  }
+
+    void IncreaseCoin()
+    {
+        coins++;
+        // Text = coins.ToString();
+        _Ready();
+
+        if (coins == 5)
+            GetNode<Timer>("Timer").Start();
+    }
+
+    void OnTimeOut()
+    {
+        GetTree().ChangeScene("res://assets/Menu.tscn");
+    }
 }

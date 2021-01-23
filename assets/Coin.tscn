@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/imports/models/coin/material-coin.material" type="Material" id=1]
 [ext_resource path="res://assets/scripts/Coin.cs" type="Script" id=2]
@@ -22,7 +22,24 @@ surfaces/0 = {
 radius = 0.372119
 height = 0.274453
 
+[sub_resource type="Animation" id=3]
+resource_name = "bounce"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 1.03, 0 ), Vector3( 0, 0.698, 0 ) ]
+}
+
 [node name="Coin" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698, 0 )
 script = ExtResource( 2 )
 
 [node name="CoinMesh" type="MeshInstance" parent="."]
@@ -35,3 +52,6 @@ shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bounce = SubResource( 3 )

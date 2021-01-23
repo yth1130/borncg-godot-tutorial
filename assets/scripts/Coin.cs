@@ -3,6 +3,8 @@ using System;
 
 public class Coin : Area
 {
+    [Signal] public delegate void coin_collected();
+
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
@@ -26,11 +28,13 @@ public class Coin : Area
         {
             GD.Print("collect");
             GetNode<Timer>("Timer").Start();
+            GetNode<AnimationPlayer>("AnimationPlayer").Play("bounce");
         }
     }
 
     void OnTimeOut()
     {
+        EmitSignal("coin_collected");
         QueueFree();
     }
 }
